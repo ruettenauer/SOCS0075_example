@@ -1,0 +1,57 @@
+---
+title: "Example Project for SOCS0075"
+author: "Tobias Ruttenauer"
+date: "2023-10-16"
+output: word_document
+bibliography: bibliography.bib 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Citing
+
+You can easily add citations from a bibfile, such as @Abadie.2003, by using the @ and the bibfile key. Putting them into brackets gives you a citation inside the text [@Abadie.2003; @Abadie.2010]. The references below will be generated automatically.
+
+## Using numbers in the text
+
+
+```{r reg, warning = FALSE, echo=FALSE}
+# Working Directory
+setwd("C:/work/Lehre/Dissertation_module/SOCS0075_2023/Example_project/02_Data")
+
+# Load data 
+load("WDI_short.RData")
+
+### Estimate linear regression with quadratic term for year 1
+
+# Model 1
+mod1.lm <- lm(log(co2_pc) ~ log(gdp_pc) + I(log(gdp_pc)^2),
+              data = wd.df[wd.df$year == 2019,])
+summary(mod1.lm)
+```
+
+The regression above has an intercept of `r round(mod1.lm$coefficients["(Intercept)"], 3)`, and the coefficient for the linear term of GDP is `r round(mod1.lm$coefficients["log(gdp_pc)"], 3)`.
+
+## References
