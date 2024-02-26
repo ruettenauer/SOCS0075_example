@@ -235,3 +235,7 @@ wordreg(list(re1.lm, re2.lm, re3.lm),
         digits = 3, include.nobs = TRUE, 
         omit.coef = c("country"),
         custom.gof.rows = list("Country effects" = c("No", "No", "Yes")))
+
+
+
+save(issp.df, file = "ISSP_prep.RData")
