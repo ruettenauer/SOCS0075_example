@@ -230,7 +230,7 @@ re3.lm <- lm(envir_willigness ~ female + age + education + TOPBOT + as.factor(co
 # See ?wordreg on how to make this look nicer.
 
 wordreg(list(re1.lm, re2.lm, re3.lm), 
-        file = "../03_Output/Regression_output1.doc",
+        file = "../03_Output/Regression_output1.docx",
         custom.model.names = c("Mod 1", "Mod 2", "Mod 3"),
         digits = 3, include.nobs = TRUE, 
         omit.coef = c("country"),

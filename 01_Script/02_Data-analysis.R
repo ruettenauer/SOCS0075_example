@@ -40,7 +40,7 @@ summary(mod2.lm)
 ### Export models to word in Output folder
 # could use custom.coef.names or custom.coef.map to rename coefficients
 wordreg(list(mod1.lm, mod2.lm),
-        file = "../03_Output/Regression.doc", # "../" means "go back one folder"
+        file = "../03_Output/Regression.docx", # "../" means "go back one folder"
         custom.model.names = c("Model 1", "Model 2"),
         dcolumn = TRUE, caption.above = TRUE, digits = 3,
         caption = "Regression models. Outcome variable: CO2 emission per capita.")
