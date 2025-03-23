@@ -159,7 +159,7 @@ sample.df <- dummy_cols(sample.df, ignore_na = TRUE,
 # Create table
 stargazer(sample.df, 
           style = "asr", digits = 3, type = "html", align = T, 
-          out = "../03_Output/Summary_stats.html", # relatic path: "one folder back, than into 03_Output"
+          out = "../03_Output/Summary_stats.html", # relative path: "one folder back, than into 03_Output"
           summary.stat = c("n", "mean", "sd", "min", "max"))
 
 
