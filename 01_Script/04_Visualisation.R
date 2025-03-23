@@ -21,6 +21,7 @@ library(dplyr)
 library(sjPlot)
 library(sjlabelled)
 library(sjmisc)
+library(interactions)
 
 #####################
 ### Load the data ###
@@ -271,8 +272,25 @@ dev.off()
 
 load("ISSP_prep.RData")
 
-
 ### Estimate Regressions
+
+### Model1
+re1.lm <- lm(envir_willigness ~ female,
+             data = issp.df)
+
+### Model2
+re2.lm <- lm(envir_willigness ~ female + age + education + TOPBOT,
+             data = issp.df)
+
+### Model2
+re3.lm <- lm(envir_willigness ~ female + as.factor(country),
+             data = issp.df)
+
+### Model3
+re4.lm <- lm(envir_willigness ~ female + age + education + TOPBOT + as.factor(country),
+             data = issp.df)
+
+
 
 # NOTE THE VARYING N!!!
 # we want to correct this by getting the obs included in the models with smallest N
